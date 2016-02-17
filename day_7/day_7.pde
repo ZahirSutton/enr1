@@ -8,7 +8,7 @@ void draw(){
   
   ellipseMode(CENTER);
  rectMode(CENTER);
- translate(100,100);
+ translate(mouseX,mouseY);
  
  
  //body
