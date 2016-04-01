@@ -8,6 +8,7 @@ void draw(){
   background(127,255,0);
   catcher.setLocation(mouseX,mouseY);
   catcher.display();
+  
 }  
            
            
