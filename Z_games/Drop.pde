@@ -3,13 +3,16 @@ class Drop {
   float speed; // speed of object
   color c; // color of object
   float r; //size of out drop
+  //keep track of wether drop is
+  //still veing used
+  boolean finished = false;
 
   Drop() {
     r = 8;
     y = -r*4;
     x = random(width);
-    speed =  random(1, 81);
-    c = color(127);
+    speed =  random(1, 10);
+    c = color(0,191,255);
   }
   void move() {
     y += speed;
@@ -29,10 +32,13 @@ class Drop {
     }
   }
   //function for when drop is caught
-  void caught() {
-    //drop stop or stop drop
-    speed = 0;
-    //move drop
-    y = -1000;
+  //void caught() {
+  //  //drop stop or stop drop
+  //  speed = 0;
+  //  //move drop
+  //  y = -1000;
+  //}
+  void finished(){
+   finished = true; 
   }
 }
