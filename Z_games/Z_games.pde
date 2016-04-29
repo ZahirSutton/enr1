@@ -21,9 +21,15 @@ void setup() {
 }
 void draw() {
   background(127, 255, 0);
+  
 
   if (gameOver) {
   } else {
+    textFront(f,48);
+    textAlign=ight(CENTER);
+    fill(255,0,0);
+    text("GAME LOST", width/2,height/2);
+    
 
     catcher.setLocation(mouseX, mouseY);
     catcher.display();
@@ -31,7 +37,7 @@ void draw() {
     //Check the timer
     if (timer.isFinished()) {
       //if we hit the end of array, start over
-      totalDrops++ ;
+
       if (totalDrops < drops.length) {
         totalDrops++;
         drops[totalDrops]= new Drop();
@@ -62,11 +68,19 @@ void draw() {
           }
         }
       }
-      if (levelCounter >= drops.length)
-        level++;
+
+
       levelCounter=0;
       lives=10;
       totalDrops=0;
       timer.setTime(constrain(300-level*25, 0, 300));
     }
+    textFont(f, 14);
+    fill(0);
+    text("lives left:!" + lives, 10, 20);
+    rect(10, 24, lives*10, 10);
+    
+    text("Level:" + level,300,20);
+    text("Score:" + score,300,40);
   }
+}
